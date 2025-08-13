@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxxeeeixce2fk"]
+
+[ext_resource type="Script" uid="uid://ccfwx5o7eyffc" path="res://character.gd" id="1_w78r6"]
+[ext_resource type="PackedScene" uid="uid://ceepqvrl6l1aq" path="res://assets/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="2_gvw7a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvw7a"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8err4"]
+sky_material = SubResource("ProceduralSkyMaterial_gvw7a")
+
+[sub_resource type="Environment" id="Environment_55pys"]
+background_mode = 2
+sky = SubResource("Sky_8err4")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8err4"]
+radius = 0.188087
+height = 0.763991
+
+[node name="character" type="CharacterBody3D"]
+script = ExtResource("1_w78r6")
+character_mesh = ExtResource("2_gvw7a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_55pys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00954062, 0.372951, -0.0105402)
+shape = SubResource("CapsuleShape3D_8err4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00698697, 0.411408, -0.0139441)
+fov = 64.4
+near = 0.62

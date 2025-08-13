@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://p1gupxptohpe"]
+
+[ext_resource type="PackedScene" uid="uid://bxxeeeixce2fk" path="res://characters/character-default.tscn" id="1_sjb42"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sjb42"]
+
+[node name="mainScene" type="Node3D"]
+
+[node name="character" parent="." instance=ExtResource("1_sjb42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61308, 0, 0.346303)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368266, 2.61856, 6.41433)
+mesh = SubResource("BoxMesh_sjb42")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.12874, -0.641277, 1.60882)
+mesh = SubResource("BoxMesh_sjb42")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8245, 1.30037, -3.52102)
+mesh = SubResource("BoxMesh_sjb42")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01406, 2.01291, 7.81314)
+mesh = SubResource("BoxMesh_sjb42")
