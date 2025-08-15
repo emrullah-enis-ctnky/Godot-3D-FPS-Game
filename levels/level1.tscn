@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://p1gupxptohpe"]
+[gd_scene load_steps=5 format=3 uid="uid://p1gupxptohpe"]
 
 [ext_resource type="PackedScene" uid="uid://bxxeeeixce2fk" path="res://characters/character-default.tscn" id="1_sjb42"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sjb42"]
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sjb42"]
+data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdtm5"]
+size = Vector3(10, 1, 10)
+
 [node name="mainScene" type="Node3D"]
 
 [node name="character" parent="." instance=ExtResource("1_sjb42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61308, 0, 0.346303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45141, 3.54319, 0.582999)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368266, 2.61856, 6.41433)
@@ -24,3 +30,12 @@ mesh = SubResource("BoxMesh_sjb42")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01406, 2.01291, 7.81314)
 mesh = SubResource("BoxMesh_sjb42")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sjb42")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_pdtm5")
+skeleton = NodePath("../..")
