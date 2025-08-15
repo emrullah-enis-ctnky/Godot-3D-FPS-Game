@@ -6,7 +6,7 @@ extends CharacterBody3D
 var character:Node3D
 var mouse_sens:=0.1
 var pitch := 0.0
-
+const MENU = preload("res://UI/menu.tscn")
 func _ready() -> void:
 	character=character_mesh.instantiate()
 	self.add_child(character)
@@ -14,6 +14,8 @@ func _ready() -> void:
 	GameManager.game_started.connect(start_game)
 	GameManager.game_stoped.connect(stop_game)
 	GameManager.start_game()
+	var menu=MENU.instantiate()
+	self.add_child(menu)
 func start_game():
 	self.set_physics_process(true)
 func stop_game():

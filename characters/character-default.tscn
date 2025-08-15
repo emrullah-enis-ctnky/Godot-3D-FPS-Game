@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxxeeeixce2fk"]
 
-[ext_resource type="Script" uid="uid://ccfwx5o7eyffc" path="res://character.gd" id="1_w78r6"]
+[ext_resource type="Script" uid="uid://ccfwx5o7eyffc" path="res://characters/character.gd" id="1_w78r6"]
 [ext_resource type="PackedScene" uid="uid://ceepqvrl6l1aq" path="res://assets/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="2_gvw7a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvw7a"]

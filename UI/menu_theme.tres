@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b02twghjf8i82"]
+
+[ext_resource type="StyleBox" uid="uid://caertn0myjigk" path="res://UI/button_style_box_hovered.tres" id="1_5bgmg"]
+[ext_resource type="StyleBox" uid="uid://byc50m34md1t0" path="res://UI/button_style_box_normal.tres" id="2_mf1pj"]
+[ext_resource type="StyleBox" uid="uid://baomcno8qxy7q" path="res://UI/button_style_box_pressed.tres" id="3_hupss"]
+[ext_resource type="Texture2D" uid="uid://bskixv5njkr4w" path="res://assets/ocean-1695509_1920.jpg" id="4_5bgmg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bgmg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltd3m"]
+atlas = ExtResource("4_5bgmg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfm1e"]
+texture = SubResource("AtlasTexture_ltd3m")
+modulate_color = Color(0.564962, 0.564962, 0.564962, 0.152941)
+
+[resource]
+Button/font_sizes/font_size = 25
+Button/styles/focus = SubResource("StyleBoxEmpty_5bgmg")
+Button/styles/hover = ExtResource("1_5bgmg")
+Button/styles/normal = ExtResource("2_mf1pj")
+Button/styles/pressed = ExtResource("3_hupss")
+Panel/styles/panel = SubResource("StyleBoxTexture_jfm1e")

@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dyrjrw5w3b77g"]
+
+[ext_resource type="Texture2D" uid="uid://bskixv5njkr4w" path="res://assets/ocean-1695509_1920.jpg" id="4_t366q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bgmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ngdg"]
+bg_color = Color(0.253382, 0.362209, 0.793382, 1)
+border_width_bottom = 10
+border_color = Color(0.0401591, 0, 0.560729, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2foa"]
+bg_color = Color(0.253382, 0.362209, 0.793382, 1)
+border_width_bottom = 20
+border_color = Color(0.0401591, 0, 0.560729, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(1, 1, 1, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym1fn"]
+bg_color = Color(0.253382, 0.362209, 0.793382, 1)
+border_color = Color(0.0401591, 0, 0.560729, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltd3m"]
+atlas = ExtResource("4_t366q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfm1e"]
+texture = SubResource("AtlasTexture_ltd3m")
+modulate_color = Color(0.564962, 0.564962, 0.564962, 0.152941)
+
+[resource]
+Button/font_sizes/font_size = 25
+Button/styles/focus = SubResource("StyleBoxEmpty_5bgmg")
+Button/styles/hover = SubResource("StyleBoxFlat_3ngdg")
+Button/styles/normal = SubResource("StyleBoxFlat_k2foa")
+Button/styles/pressed = SubResource("StyleBoxFlat_ym1fn")
+Panel/styles/panel = SubResource("StyleBoxTexture_jfm1e")

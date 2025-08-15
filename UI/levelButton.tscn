@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://h2d2hsirl081"]
+
+[ext_resource type="Theme" uid="uid://dyrjrw5w3b77g" path="res://UI/menu_level_button.tres" id="1_o4vby"]
+[ext_resource type="Script" uid="uid://dac537f0n3ntl" path="res://UI/level_button.gd" id="2_oq5ch"]
+
+[node name="LevelButton" type="Button"]
+offset_right = 75.0
+offset_bottom = 75.0
+size_flags_vertical = 4
+theme = ExtResource("1_o4vby")
+text = "1"
+script = ExtResource("2_oq5ch")

@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://v3eygpqv4dhs"]
+
+[ext_resource type="Script" uid="uid://banir7uvf1hrb" path="res://UI/menu.gd" id="1_wfiwe"]
+[ext_resource type="Theme" uid="uid://b02twghjf8i82" path="res://UI/menu_theme.tres" id="2_4hkxj"]
+
+[node name="PauseMenu" type="Node2D"]
+script = ExtResource("1_wfiwe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundPanel" type="Panel" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_4hkxj")
+
+[node name="MainMenu" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ButtonStart" type="Button" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+text = "START"
+
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ButtonResume" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ButtonMenu" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="LevelMenu" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 25
+columns = 10
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/ButtonMenu" to="." method="_on_button_menu_pressed"]
